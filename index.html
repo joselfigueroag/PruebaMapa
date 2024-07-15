@@ -1,274 +1,246 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    
-            <meta name="viewport" content="width=device-width,
+    <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_12fa10aefaa01ce538a43da818adf339 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
 
-                
-                #map_7e25b9d7565a98c8bb9027c9e5e45649 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-
-                #map_918ac08a08c4d1b5f17d77d58d069aa8 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-
-                #map_10498106e33dd7e9f2b2fcf1d156e926 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-
-                #map_17fd74cb3ca0254016cc871e7c093f61 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                
-                .leaflet-container { font-size: 1rem; }
-            </style>
-        
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<!--COPIAR DESDE AQUI-->   
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
 
-function openRightMenu() {
-  document.getElementById("rightMenu").style.display = "block";
-}
+    <!--COPIAR DESDE AQUI-->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script>
+        function openRightMenu() {
+            document.getElementById("rightMenu").style.display = "block";
+        }
 
-function closeRightMenu() {
-  document.getElementById("rightMenu").style.display = "none";
-}
-</script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+        function closeRightMenu() {
+            document.getElementById("rightMenu").style.display = "none";
+        }
+    </script>
+  
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+    <style>
+        #map_0ae97a9430dbf91171d8fc4cda32d59b {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+        #map_7e25b9d7565a98c8bb9027c9e5e45649 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+        #map_918ac08a08c4d1b5f17d77d58d069aa8 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+        #map_10498106e33dd7e9f2b2fcf1d156e926 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+        #map_17fd74cb3ca0254016cc871e7c093f61 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+        .leaflet-container {
+            font-size: 1rem;
+        }
+    </style>
 </head>
+
 <body>
-  
-  
-  <div class="w3-bar w3-black w3-border">
-      <a href="https://geniosstudios.github.io/mapParaguay.github.io/" class="w3-bar-item">
-    
-          <img src="Genios-03.png" class=" " style="height: auto;width:20%; max-width: 100%;" alt="Avatar">    
-         
-         
-     </a>
-         
-         
-       
-         
-         
-         
-         <div style = "margin-left:80%; padding-top:20px;">
-           <a class="navbar-brand w3-hide-small w3-hide-medium" target= "_blank" href="https://geniosstudios.com/">
-                   <i class="fa fa-google fa-2x"></i>
-          </a>
-          
-          
-          
-          <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://www.instagram.com/geniostudios/" target= "_blank"><i class="fa fa-instagram fa-2x"></i></a>
-          <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://ve.linkedin.com/company/genios-studios" target= "_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
-          <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://www.facebook.com/geniostudios/" target= "_blank"><i class="fa fa-facebook fa-2x"></i></a>
-          <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://twitter.com/geniostudios" target= "_blank"><i class="fa fa-twitter fa-2x"></i></a>
-          
-          </div>
-         
-         
-         
-        <button class="w3-button w3-xlarge w3-right w3-hide-large" onclick="openRightMenu()">&#9776;</button>
-        
-          <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;left:8;width:60%" id="rightMenu">
-              <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-black w3-large">Cerrar &times;</button>
-              <a class="navbar-brand" target= "_blank" href="https://geniosstudios.com/">
-                   <i class="fa fa-internet-explorer"></i>
-          </a>
-          
-          
-            
-              <a class="navbar-brand" href="https://www.instagram.com/geniostudios/" target= "_blank"><i class="fa fa-instagram"></i></a>
-              <a class="navbar-brand" href="https://ve.linkedin.com/company/genios-studios" target= "_blank"><i class="fa fa-linkedin-square"></i></a>
-              <a class="navbar-brand" href="https://www.facebook.com/geniostudios/" target= "_blank"><i class="fa fa-facebook"></i></a>
-              <a class="navbar-brand" href="https://twitter.com/geniostudios" target= "_blank"><i class="fa fa-twitter"></i></a>
+    <div class="w3-bar w3-black w3-border">
+        <a href="#" class="w3-bar-item">
+            <img src="Genios-03.png" class=" " style="height: auto;width:20%; max-width: 100%;" alt="Avatar">
+        </a>
+
+        <div style="margin-left:80%; padding-top:20px;">
+            <a class="navbar-brand w3-hide-small w3-hide-medium" target="_blank" href="https://geniosstudios.com/">
+                <i class="fa fa-google fa-2x"></i>
+            </a>
+            <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://www.instagram.com/geniostudios/"
+                target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+            <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://ve.linkedin.com/company/genios-studios"
+                target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+            <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://www.facebook.com/geniostudios/"
+                target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+            <a class="navbar-brand w3-hide-small w3-hide-medium" href="https://twitter.com/geniostudios"
+                target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
         </div>
-        
 
-</div>
-    
-<main class="content" >
+        <button class="w3-button w3-xlarge w3-right w3-hide-large" onclick="openRightMenu()">&#9776;</button>
 
-	<div class="faq-container">
-		  <h2 style="color:#2dabd2;">Radiografía de medios sociales en torno al estado Zulia <br>Mapa interactivo de tendencias municipales</h2>
-          
-		  
-		   <!--<details open>-->
-		   <details>
-			  <summary>
-				  <h4 style="color:#f05707;"><b>Actividad en redes sociales por municipio</b></h4>
-			  </summary>
-			   <div class="card" style="height: 700px;">
-                                   
-                                    
-                    <div class="folium-map" id="map_12fa10aefaa01ce538a43da818adf339" ></div>
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;left:8;width:60%;background-color:black"
+            id="rightMenu">
+            <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-black w3-large">Cerrar &times;</button>
+            <a class="navbar-brand" target="_blank" href="https://geniosstudios.com/">
+                <i class="fa fa-internet-explorer"></i>
+            </a>
+            <a class="navbar-brand" href="https://www.instagram.com/geniostudios/" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+            <a class="navbar-brand" href="https://ve.linkedin.com/company/genios-studios" target="_blank"><i
+                    class="fa fa-linkedin-square"></i></a>
+            <a class="navbar-brand" href="https://www.facebook.com/geniostudios/" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+            <a class="navbar-brand" href="https://twitter.com/geniostudios" target="_blank"><i
+                    class="fa fa-twitter"></i></a>
+        </div>
+    </div>
 
+    <main class="content">
+        <div class="faq-container">
+            <h2 style="color:#2dabd2;">Radiografía de medios sociales</h2>
+
+            <!--<details open>-->
+            <details>
+                <summary>
+                    <h4 style="color:#f05707;"><b>Publicaciones por municipio</b></h4>
+                </summary>
+                <div class="card" style="height: 700px;">
+                    <div class="folium-map" id="map_0ae97a9430dbf91171d8fc4cda32d59b"></div>
+                </div>
+            </details>
+
+            <!-- <details>
+                <summary>
+                    <h4 style="color:#f05707;"><b>Principales temas y quejas por municipio</b></h4>
+                </summary>
+                <div class="card" style="height: 700px;">
+                    <div class="folium-map" id="map_10498106e33dd7e9f2b2fcf1d156e926"></div>
                 </div>
             </details>
 
             <details>
                 <summary>
-                    <h4 style="color:#f05707;"><b>Principales temas y quejas por municipio</b></h4>
-                </summary>
-                 <div class="card" style="height: 700px;">
-                                     
-                                      
-                      <div class="folium-map" id="map_10498106e33dd7e9f2b2fcf1d156e926" ></div>
-  
-                  </div>
-              </details>
-
-          
-            
-            <details >
-               
-                <summary>
                     <h4 style="color:#f05707;"><b>Tendencia ideológica predominante por municipio</b></h4>
                 </summary>
 
-                 <div class="card" style="height: 700px;">
-                                     
+                <div class="card" style="height: 700px;">
                     <div style="position: fixed; 
                     bottom: 50px; left: 50px; width: 150px; height: 90px; 
                     background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
-                    &nbsp; <b></b> <br>
-                    &nbsp; <i style="background:#e52332">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Izquierda <br>
-                    &nbsp; <i style="background:#2d4c9c">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Derecha
+                        &nbsp; <b></b> <br>
+                        &nbsp; <i style="background:#e52332">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Izquierda <br>
+                        &nbsp; <i style="background:#2d4c9c">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Derecha
                     </div>
-                  <div class="folium-map" id="map_7e25b9d7565a98c8bb9027c9e5e45649" ></div>
-  
+                    <div class="folium-map" id="map_7e25b9d7565a98c8bb9027c9e5e45649"></div>
                 </div>
-                             
-                 
             </details>
 
-            <details >
+            <details>
                 <summary>
                     <h4 style="color:#f05707;"><b>Sentimiento predominante por municipio</b></h4>
                 </summary>
 
-                 <div class="card" style="height: 700px;">
-                                     
+                <div class="card" style="height: 700px;">
+
                     <div style="position: fixed; 
                     bottom: 50px; left: 50px; width: 200px; height: 90px; 
                     background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
-                    &nbsp; <b></b> <br>
-                    &nbsp; <i style="background:#f05707">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Sentimiento negativo <br>
-                    &nbsp; <i style="background:#2facd3">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Sentimiento positivo
+                        &nbsp; <b></b> <br>
+                        &nbsp; <i style="background:#f05707">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Sentimiento negativo
+                        <br>
+                        &nbsp; <i style="background:#2facd3">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Sentimiento positivo
                     </div>
-                  <div class="folium-map" id="map_918ac08a08c4d1b5f17d77d58d069aa8" ></div>
-  
-                    </div>
-                            
-                 
+                    <div class="folium-map" id="map_918ac08a08c4d1b5f17d77d58d069aa8"></div>
+
+                </div>
+
+
             </details>
             <br>
 
             <h2 style="color:#2dabd2;">Estudio cuantitativo en torno al estado Zulia</h2>
 
-            <details >
+            <details>
                 <summary>
                     <h4 style="color:#f05707;"><b>Intención de voto</b></h4>
                 </summary>
 
-                 <div class="card" style="height: 700px;">
-                                     
+                <div class="card" style="height: 700px;">
+
                     <div style="position: fixed; 
                         bottom: 50px; left: 50px; width: 200px; height: 120px; 
                         background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
                         &nbsp; <b></b> <br>
                         &nbsp; <i style="background:#e52332">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Nicolás Maduro <br>
                         &nbsp; <i style="background:#2d4c9c">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Edmundo González <br>
-                        &nbsp; <i style="background:orange">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; No votaría / Voto nulo <br>
+                        &nbsp; <i style="background:orange">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; No votaría / Voto nulo
+                        <br>
                         &nbsp; <i style="background:#532F63">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp; Intención igualitaria
                     </div>
-                        
-     
-    
-            <div class="folium-map" id="map_17fd74cb3ca0254016cc871e7c093f61" ></div>
-
-  
-                    </div>
-                            
-                 
-            </details>
-            
-
-
-           
-    </div>
-
-                
-			  
-			
-
-            
-</main>   
+                    <div class="folium-map" id="map_17fd74cb3ca0254016cc871e7c093f61"></div>
+                </div>
+            </details> -->
+        </div>
+    </main>
 </body>
 
-<script src="mapa.js"></script>
+<script src="publicaciones_por_region.js"></script>
+
+
+<!-- <script src="mapa.js"></script>
 <script src="mapa_zulia_info_v2.js"></script>
 <script src="Map_Zulia_ideology_info.js"></script>
 <script src="mapa_zulia_sentiment.js"></script>
-<script src="mapa_cuanti.js"></script>
+<script src="mapa_cuanti.js"></script> -->
 
 </html>
